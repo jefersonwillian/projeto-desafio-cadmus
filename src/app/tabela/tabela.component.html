@@ -1,0 +1,30 @@
+<div style="width: 100%; margin-top: 3rem; border: 1px solid #000;">
+    <ng-container *ngIf="listaTabela.length; else elseTemplate">
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <td>Nome do Produto</td>
+                    <td>Descrição</td>
+                    <td>valor</td>
+                    <td>Ações</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listaTabela; index as i">
+                    <td>{{item.nome}}</td>
+                    <td>{{item.descricao}}</td>
+                    <td>{{item.valor}}</td>
+                    <td>
+                        <button (click)="editar(item, i)" style="margin-right: 1rem;">Editar</button>
+                        <button (click)="excluir(i)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    <ng-template #elseTemplate>
+        Tabela sem dados
+    </ng-template>
+    
+    
+</div>

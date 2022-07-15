@@ -1,0 +1,9 @@
+<p>home works!</p>
+
+<app-produtos #appProdutos (emitFormValue)="onClickFormValue($event)"></app-produtos>
+
+<app-tabela 
+    [listaTabela]="listaProdutos" 
+    (itemValue)="onItemValue($event)" 
+    (indexProduto)="onIndexProduto($event)">
+</app-tabela>
